@@ -1,0 +1,21 @@
+<div style="position:fixed; top: 10; right: 10"><input type="text" id="url"/>
+<button onclick="play()">Play</button></div>
+<object width="100%" height="100%">
+    <param name="quality" value="high" />
+    <param name="scale" value="showall" />
+    <embed src="https://uetcodehub.xyz/pix/os/Chapter2_P2.swf" 
+        width="100%" 
+        height="100%"
+		id="video"
+    >
+    </embed>
+</object>
+<script>
+	function play() {
+		var url = document.getElementById("url").value;
+		var video = document.getElementById("video");
+		var alt_video = video.cloneNode(true);
+		alt_video.setAttribute('src', url);
+		video.parentNode.replaceChild(alt_video, video);
+	}
+</script>
