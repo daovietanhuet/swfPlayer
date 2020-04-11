@@ -21,33 +21,9 @@
 </style>
 <link rel="icon" type="image/ico" href="swf_929684.png" />
 <title>SWF Player</title>
-<div style="position:fixed; top: 10; right: 10; width: 16.5%; background-color: rgba( 0, 0, 0, .7); height: 97vh; overflow-x: hidden; overflow-y:scroll">
+<div style="position:fixed; top: 10; right: 10; width: 16.5%; background-color: rgba( 0, 0, 0, .7); height: 97vh; overflow-x: hidden; overflow-y:scroll" id="sidebar">
 	<input type="text" id="url" placeholder="Nhập url" style="width: 70%; margin-left: 3%"/>
 	<button onclick="play()" style="width: 24%">Play</button>
-<div onclick="play('https:/\/uetcodehub.xyz/pix/os/Chapter1.swf')" style="cursor: pointer; color: #fff; margin-top: 5%;">
-	<image src="Chapter1.jpg" style="width:80%; height:auto; margin-left: 10%; margin-right: 10%;"/>
-	<div style="margin-top: 5; text-align: center;">Tuần 1: Giới thiệu hệ điều hành</div>
-</div>
-<div onclick="play('https:/\/uetcodehub.xyz/pix/os/Chapter2_P1.swf')" style="cursor: pointer; color: #fff; margin-top: 5%;">
-	<image src="Chapter2_P1.jpg" style="width:80%; height:auto; margin-left: 10%; margin-right: 10%;"/>
-	<div style="margin-top: 5; text-align: center;">Tuần 2: Tiến trình và lập lịch cpu (phần 1)</div>
-</div>
-<div onclick="play('https:/\/uetcodehub.xyz/pix/os/Chapter2_P2.swf')" style="cursor: pointer; color: #fff; margin-top: 5%;">
-	<image src="Chapter2_P2.jpg" style="width:80%; height:auto; margin-left: 10%; margin-right: 10%;"/>
-	<div style="margin-top: 5; text-align: center;">Tuần 2: Tiến trình và lập lịch cpu (phần 2)</div>
-</div>
-<div onclick="play('https://uetcodehub.xyz/pix/os/Chapter3_p1.swf')" style="cursor: pointer; color: #fff; margin-top: 5%;">
-	<image src="Chapter3_P1.jpg" style="width:80%; height:auto; margin-left: 10%; margin-right: 10%;"/>
-	<div style="margin-top: 5; text-align: center;">Tuần 3: Inter-Process(Phần 1)</div>
-</div>
-<div onclick="play('https://uetcodehub.xyz/pix/os/Chapter3_P2.swf')" style="cursor: pointer; color: #fff; margin-top: 5%;">
-	<image src="Chapter3_P2.jpg" style="width:80%; height:auto; margin-left: 10%; margin-right: 10%;"/>
-	<div style="margin-top: 5; text-align: center;">Tuần 3: Inter-Process(Phần 2)</div>
-</div>
-<div onclick="play('https://uetcodehub.xyz/pix/os/Chapter4_P1.swf')" style="cursor: pointer; color: #fff; margin-top: 5%;">
-	<image src="Chapter4_P1.jpg" style="width:80%; height:auto; margin-left: 10%; margin-right: 10%;"/>
-	<div style="margin-top: 5; text-align: center;">Tuần 4: Deathlock(Phần 1)</div>
-</div>
 </div>
 <object width="100%" height="100%">
     <param name="quality" value="high" />
@@ -62,6 +38,38 @@
     </embed>
 </object>
 <script>
+	var videos = [
+	    {
+		title: "Tuần 1: Giới thiệu hệ điều hành",
+		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter1.swf',
+		image: "Chapter1.jpg"
+	    },
+	    {
+		title: "Tuần 2: Tiến trình và lập lịch cpu (phần 1)",
+		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter2_P1.swf',
+		image: "Chapter2_P1.jpg"
+	    },
+	    {
+		title: "Tuần 2: Tiến trình và lập lịch cpu (phần 2)",
+		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter2_P2.swf',
+		image: "Chapter2_P2.jpg"
+	    },
+	    {
+		title: "Tuần 3: Inter-Process-Communication(Phần 1)",
+		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter3_p1.swf',
+		image: "Chapter3_P1.jpg"
+	    },
+	    {
+		title: "Tuần 3: Inter-Process-Communication(Phần 1)",
+		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter3_P2.swf',
+		image: "Chapter3_P2.jpg"
+	    },
+	    {
+		title: "Tuần 4: Deathlock(Phần 1)",
+		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter4_P1.swf',
+		image: "Chapter4_P1.jpg"
+	    }
+	]
 	function play(str_url) {
 		var url = str_url ? str_url : document.getElementById("url").value;
 		var video = document.getElementById("video");
@@ -69,4 +77,11 @@
 		alt_video.setAttribute('src', url);
 		video.parentNode.replaceChild(alt_video, video);
 	}
+	sidebar = document.getElementById("sidebar");
+	videos.map(video => {sidebar.innerHTML = sidebar.innerHTML + `
+		<div onclick='play(${video.url})' style='cursor: pointer; color: #fff; margin-top: 5%;'>
+			<image src='${video.image}' style='width:80%; height:auto; margin-left: 10%; margin-right: 10%;'/>
+			<div style='margin-top: 5; text-align: center;'>${video.title}</div>
+		</div>  
+	`})
 </script>
