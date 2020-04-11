@@ -83,7 +83,7 @@
 	video.parentNode.replaceChild(alt_video, video);
 	sidebar = document.getElementById("sidebar");
 	videos.map(video => {sidebar.innerHTML = sidebar.innerHTML + `
-		<div onclick='play(${video.url})' style='cursor: pointer; color: #fff; margin-top: 5%;'>
+		<div onclick='play('${video.url}')' style='cursor: pointer; color: #fff; margin-top: 5%;'>
 			<image src='${video.image}' style='width:80%; height:auto; margin-left: 10%; margin-right: 10%;'/>
 			<div style='margin-top: 5; text-align: center;'>${video.title}</div>
 		</div>  
