@@ -77,6 +77,10 @@
 		alt_video.setAttribute('src', url);
 		video.parentNode.replaceChild(alt_video, video);
 	}
+	document.getElementById("video");
+	var alt_video = video.cloneNode(true);
+	alt_video.setAttribute('src', videos[videos.length - 1].url);
+	video.parentNode.replaceChild(alt_video, video);
 	sidebar = document.getElementById("sidebar");
 	videos.map(video => {sidebar.innerHTML = sidebar.innerHTML + `
 		<div onclick='play(${video.url})' style='cursor: pointer; color: #fff; margin-top: 5%;'>
