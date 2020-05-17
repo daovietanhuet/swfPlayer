@@ -137,6 +137,7 @@
 	document.getElementById("video");
 	var alt_video = video.cloneNode(true);
 	alt_video.setAttribute('src', domain + videos[videos.length - 1].url + query);
+	console.log(domain + videos[videos.length - 1].url + query);
 	video.parentNode.replaceChild(alt_video, video);
 	sidebar = document.getElementById("sidebar");
 	videos.map(video => {sidebar.innerHTML = sidebar.innerHTML + `
