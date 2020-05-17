@@ -38,90 +38,92 @@
     </embed>
 </object>
 <script>
+	var domain = "https:/\/filebin.net/jk1twvdt1zbah47e/";
+	var query = "?t=gh7ppn0f"
 	var videos = [
 	    {
 		title: "Tuần 1: Giới thiệu hệ điều hành",
-		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter1.swf',
+		url: 'Chapter1.swf',
 		image: "Chapter1.jpg"
 	    },
 	    {
 		title: "Tuần 2: Tiến trình và    lập lịch cpu (phần 1)",
-		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter2_P1.swf',
+		url: 'Chapter2_P1.swf',
 		image: "Chapter2_P1.jpg"
 	    },
 	    {
 		title: "Tuần 2: Tiến trình và    lập lịch cpu (phần 2)",
-		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter2_P2.swf',
+		url: 'Chapter2_P2.swf',
 		image: "Chapter2_P2.jpg"
 	    },
 	    {
 		title: "Tuần 3: Inter-Process-Communication(Phần 1)",
-		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter3_p1.swf',
+		url: 'Chapter3_p1.swf',
 		image: "Chapter3_P1.jpg"
 	    },
 	    {
 		title: "Tuần 3: Inter-Process-Communication(Phần 2)",
-		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter3_P2.swf',
+		url: 'Chapter3_P2.swf',
 		image: "Chapter3_P2.jpg"
 	    },
 	    {
 		title: "Tuần 4: Deathlock(Phần 1)",
-		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter4_P1.swf',
+		url: 'Chapter4_P1.swf',
 		image: "Chapter4_P1.jpg"
 	    },
 	    {
 		title: "Tuần 4: Deathlock(Phần 2)",
-		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter4_P2.swf',
+		url: 'Chapter4_P2.swf',
 		image: "Chapter4_P2.jpg"
 	    },
 	    {
 		title: "Tuần 4: Deathlock(Phần 3)",
-		url: 'https:/\/uetcodehub.xyz/pix/os/Chapter4_P3.swf',
+		url: 'Chapter4_P3.swf',
 		image: "Chapter4_P3.jpg"
 	    },
 	    {
 		title: "Tuần 5: Quản lý bộ nhớ trong: cấp phát bộ nhớ(Phần 1)",
-		url: 'https://uetcodehub.xyz/pix/os/Chapter5_p1.swf',
+		url: 'Chapter5_p1.swf',
 		image: "Chapter5_P1.jpg"
 	    },
 	    {
 		title: "Tuần 5: Quản lý bộ nhớ trong: cấp phát bộ nhớ(Phần 2)",
-		url: 'https://uetcodehub.xyz/pix/os/Chapter5_p2.swf',
+		url: 'Chapter5_p2.swf',
 		image: "Chapter5_P2.jpg"
 	    },
             {
 		title: "Tuần 5: Quản lý bộ nhớ trong: cấp phát bộ nhớ(Phần 3)",
-		url: 'https://uetcodehub.xyz/pix/os/Chapter5_p3.swf',
+		url: 'Chapter5_p3.swf',
 		image: "Chapter5_P3.jpg"
 	    },
 	    {
 		title: "Tuần 5: Quản lý bộ nhớ trong: cấp phát bộ nhớ(Phần 4)",
-		url: 'https://uetcodehub.xyz/pix/os/Chapter5_p4.swf',
+		url: 'Chapter5_p4.swf',
 		image: "Chapter5_P4.jpg"
 	    },
 	    {
 		title: "Tuần 5: Quản lý bộ nhớ trong: cấp phát bộ nhớ(Phần 5)",
-		url: 'https://uetcodehub.xyz/pix/os/Chapter5_p5.swf',
+		url: 'Chapter5_p5.swf',
 		image: "Chapter5_P5.jpg"
 	    },
 	    {
 		title: "Tuần 6: Quản lý bộ nhớ trong: bộ nhớ ảo(Phần 1)",
-		url: 'https://uetcodehub.xyz/pix/os/Chapter6_P1.swf',
+		url: 'Chapter6_P1.swf',
 		image: "Chapter6_P1.jpg"
 	    },
 	    {
 		title: "Tuần 6: Quản lý bộ nhớ trong: bộ nhớ ảo(Phần 2)",
-		url: 'https://uetcodehub.xyz/pix/os/Chapter6_P2.swf',
+		url: 'Chapter6_P2.swf',
 		image: "Chapter6_P2.jpg"
 	    },	
 	    {
 		title: "Tuần 6: Quản lý bộ nhớ trong: bộ nhớ ảo(Phần 3)",
-		url: 'https://uetcodehub.xyz/pix/os/Chapter6_P2_1.swf',
+		url: 'Chapter6_P2_1.swf',
 		image: "Chapter6_P2_1.jpg"
 	    },
 	    {
 		title: "Tuần 6: Quản lý bộ nhớ trong: bộ nhớ ảo(Phần 4)",
-		url: 'https://uetcodehub.xyz/pix/os/Chapter6_P3.swf',
+		url: 'Chapter6_P3.swf',
 		image: "Chapter6_P3.jpg"
 	    }
 	]
@@ -134,11 +136,11 @@
 	}
 	document.getElementById("video");
 	var alt_video = video.cloneNode(true);
-	alt_video.setAttribute('src', videos[videos.length - 1].url);
+	alt_video.setAttribute('src', domain + videos[videos.length - 1].url + query);
 	video.parentNode.replaceChild(alt_video, video);
 	sidebar = document.getElementById("sidebar");
 	videos.map(video => {sidebar.innerHTML = sidebar.innerHTML + `
-		<div onclick="play('${video.url}')" style='cursor: pointer; color: #fff; margin-top: 5%;'>
+		<div onclick="play('${domain + video.url + query}')" style='cursor: pointer; color: #fff; margin-top: 5%;'>
 			<image src='${video.image}' style='width:80%; height:16%; margin-left: 10%; margin-right: 10%;'/>
 			<div style='margin-top: 5; text-align: center;'>${video.title}</div>
 		</div>  
